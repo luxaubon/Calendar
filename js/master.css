@@ -1,0 +1,152 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'HelvethaicaRegular55';
+    src: url('../font/helvethaicaregular55.eot');
+    src: url('../font/helvethaicaregular55.eot') format('embedded-opentype'),
+         url('../font/helvethaicaregular55.woff') format('woff'),
+         url('../font/helvethaicaregular55.ttf') format('truetype'),
+         url('../font/helvethaicaregular55.svg#DBHelvethaicaMonX55Regular') format('svg');
+}
+
+* {
+	/* old-style reset here :) */
+	border: 0px;
+	padding: 0px;
+}
+
+.icaltable {
+	border-collapse: collapse;
+	/*border: 1px solid #9DABCE;*/
+	border-width: 0px 0px 1px 1px;
+	margin: 10px auto; /*เซทกลาง*/
+	font-size: 20px;
+}
+.icaltable td, th {
+	width: 81px;
+	height: 81px;
+	text-align: center;
+	vertical-align: middle;
+	color: #444;
+	position: relative;
+	border: 1px solid #EEEEEE;
+}
+.icaltable th {
+	height: 30px;
+	font-weight: bold;
+	font-size: 20px;
+}
+.icaltable td:hover, .icaltable th:hover {
+	background-position: 0px -81px;
+	color: #222;
+}
+.icaltable td.date_has_event {
+	
+	background : #EFF9F1;
+	color: #09ACAC;
+}
+
+.icaltable td.date_has_event:hover {
+	/*background-position: 162px -81px;*/
+	opacity: 1.0;
+    transition: opacity .1s ease-in-out;
+    -moz-transition: opacity .1s ease-in-out;
+    -webkit-transition: opacity .1s ease-in-out;
+}
+.icaltable td.padding {/*ช่องที่เหลือที่ไม่มีวันที่*/
+	/*background: url(../img/calpad.jpg);*/
+}
+.icaltable td.today {
+	background-position: 81px 0px;
+	background : #F8AD40;
+	color: #FFF;
+
+
+}
+.icaltable td.today:hover {
+	/*background-position: 81px -81px;*/
+
+}
+
+.events {
+	position: relative;
+}
+.events ul {
+	text-align: left;
+	position: absolute;
+	display: none;
+	z-index: 1000;
+	/*padding: 5px;*/
+	background: #FFFFFF;
+	color: white;
+	border: 1px solid white;
+	font-size: 15px;
+	width: 200px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-border-radius: 3px;
+	list-style: none;
+	color: #444444;
+	-moz-box-shadow: 0 0px 10px -2px rgba(50, 50, 50, 0.27);
+	-webkit-box-shadow: 0 0px 10px -2px rgba(50, 50, 50, 0.27);
+	-webkit-box-shadow:  0 0px 10px -2px rgba(50, 50, 50, 0.27);
+}
+.events li {
+	padding-bottom: 5px;
+}
+
+
+.events li .title{width: 100%; height: 40px;font-size: 20px;vertical-align: middle;}
+.events li .title img {width: 17%; display: inline-block; vertical-align: middle;padding: 3px 5px;margin-top:3px}
+.events li .title .titleTxT{ width: 75%; height: auto;display: inline-block;line-height: 20px;vertical-align: middle;color: #09ACAC;margin-top: 3px}
+.events li span {width: 100%;height: auto;display: block;font-size: 16px;text-align: justify;color: #555;margin-top: 5px;background : #EEEEEE;line-height: 15px;overflow: hidden;padding: 5px 0 }/*description*/
+.events li .tm {width: 100%;height: auto;font-size: 14px;background: #EEEEEE;margin-top: 5px;padding: 5px 0}
+.events li .tm p {margin: 0;padding: 0;font-size: 16px;line-height: 15px;}
+
+
+
+
+.top-txt {width: 90%;height: 60px;display: block; margin: 0 auto;border-bottom: 1px solid #CCCCCC;}/*background: red;*/
+.top-txt .mid-txt {width: 40%;height: auto;float: left;display: inline-block;text-align: center;vertical-align: middle;}/*background: #DDDDDD;*/
+#currentmonth, #currentyear{font-weight:bold;font-size: 30px}
+.top-txt .top-txt-arrow {width: 30%;height: auto;float: left;display: inline-block;vertical-align: middle;}/*background: green;*/
+/*#icalprev{position:relative;width: 50px;float: right;margin-top: 8px;}*/
+#icalprev{position:relative;width:10%;float: right;margin-top: 5px;}
+/*#icalnext{position:relative;width: 50px;float: left;margin-top: 8px;}*/
+#icalnext{position:relative;width: 10%;float: left;margin-top: 5px;}
+.top-txt .clock { width: 580px;height: 20px;float: left;}/*background: orange*/
+.top-txt .clock #hours {text-align: center;}
+
+@media only screen and (min-width: 641px) and (max-width: 959px) {
+.events ul {width: 140px;}
+.events li .title .titleTxT {font-size: 18px}
+.events li span {font-size: 14px}
+.events li .tm p {font-size: 14px}
+}
+
+@media only screen and (min-width: 481px) and (max-width: 640px) {
+#currentmonth, #currentyear {font-size: 28px}
+.top-txt .mid-txt {width: 50%;height: auto;}
+.top-txt .top-txt-arrow {width: 25%;height: auto;}
+.events ul {width: 130px;}
+.events li .title .titleTxT {font-size: 16px;line-height: 15px;}
+.events li span {font-size: 14px;margin-top:0;}
+.events li .tm p {font-size: 14px}
+#icalnext,#icalprev {width: 20%}
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+
+#currentmonth, #currentyear {font-size: 24px}
+#icalnext,#icalprev {width: 50%}
+.top-txt .mid-txt {width: 60%;height: auto;}
+.top-txt .top-txt-arrow {width: 20%;height: auto;}
+.events li .title img {width: 16%}
+.events ul {width: 105px;}
+.events li .title .titleTxT {font-size: 14px;line-height: 15px;width: 73%}
+.events li span {font-size: 12px;margin-top:0;}
+.events li .tm p {font-size: 12px}
+.icaltable td, th {	width: 61px;height: 41px;}
+.icaltable th {font-size: 16px}
+}
